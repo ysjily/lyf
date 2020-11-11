@@ -129,24 +129,24 @@
 
 
 
-  <meta name="description" content="UVA11825 Hackers’ Crackdown题目描述假如你是一个黑客，侵入了一个有着n台计算机（编号为1.2.3….n）的网络。一共有n种服务，每台计算机都运行着所有服务。对于每台计算机，你都可以选择一项服务，终止这台计算机和所有与它相邻计算机的该项服务（如果其中一些服务已经停止，那他们继续保持停止状态）。你的目标是让尽量多的服务完全瘫痪(即：没有任何计算及运行着该服务) 输入格式 输入">
+  <meta name="description" content="局部变量与全局变量的关系与c++不同，python中局部与全局的关系很有意思。c++的一部分bug就来自于局部与全局的冲突，当然，好处是可以方便地修改全局变量。而py的主函数和次函数是在不同栈运行的，变量相对独立。 12345678def fuck():    a = 7;b = 8    print(a, b)a = 1;b = 2fuck()print(a, b)&amp;gt;&amp;gt;&amp;gt;7 8">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UVA11825 Hackers&#39; Crackdown">
-<meta property="og:url" content="https://github.com/ysjily/2018/10/21/hacker/index.html">
+<meta property="og:title" content="浅谈python函数中一些变量的问题">
+<meta property="og:url" content="https://github.com/ysjily/2020/11/11/py2/index.html">
 <meta property="og:site_name" content="洛阳枫">
-<meta property="og:description" content="UVA11825 Hackers’ Crackdown题目描述假如你是一个黑客，侵入了一个有着n台计算机（编号为1.2.3….n）的网络。一共有n种服务，每台计算机都运行着所有服务。对于每台计算机，你都可以选择一项服务，终止这台计算机和所有与它相邻计算机的该项服务（如果其中一些服务已经停止，那他们继续保持停止状态）。你的目标是让尽量多的服务完全瘫痪(即：没有任何计算及运行着该服务) 输入格式 输入">
+<meta property="og:description" content="局部变量与全局变量的关系与c++不同，python中局部与全局的关系很有意思。c++的一部分bug就来自于局部与全局的冲突，当然，好处是可以方便地修改全局变量。而py的主函数和次函数是在不同栈运行的，变量相对独立。 12345678def fuck():    a = 7;b = 8    print(a, b)a = 1;b = 2fuck()print(a, b)&amp;gt;&amp;gt;&amp;gt;7 8">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-24T04:29:30.000Z">
+<meta property="og:updated_time" content="2020-11-11T13:10:59.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UVA11825 Hackers&#39; Crackdown">
-<meta name="twitter:description" content="UVA11825 Hackers’ Crackdown题目描述假如你是一个黑客，侵入了一个有着n台计算机（编号为1.2.3….n）的网络。一共有n种服务，每台计算机都运行着所有服务。对于每台计算机，你都可以选择一项服务，终止这台计算机和所有与它相邻计算机的该项服务（如果其中一些服务已经停止，那他们继续保持停止状态）。你的目标是让尽量多的服务完全瘫痪(即：没有任何计算及运行着该服务) 输入格式 输入">
+<meta name="twitter:title" content="浅谈python函数中一些变量的问题">
+<meta name="twitter:description" content="局部变量与全局变量的关系与c++不同，python中局部与全局的关系很有意思。c++的一部分bug就来自于局部与全局的冲突，当然，好处是可以方便地修改全局变量。而py的主函数和次函数是在不同栈运行的，变量相对独立。 12345678def fuck():    a = 7;b = 8    print(a, b)a = 1;b = 2fuck()print(a, b)&amp;gt;&amp;gt;&amp;gt;7 8">
 
 
 
 
 
 
-  <link rel="canonical" href="https://github.com/ysjily/2018/10/21/hacker/"/>
+  <link rel="canonical" href="https://github.com/ysjily/2020/11/11/py2/"/>
 
 
 
@@ -156,7 +156,7 @@
   };
 </script>
 
-  <title>UVA11825 Hackers' Crackdown | 洛阳枫</title>
+  <title>浅谈python函数中一些变量的问题 | 洛阳枫</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ysjily/ysjily.github.io/2018/10/21/hacker/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ysjily/ysjily.github.io/2020/11/11/py2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lyf">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">UVA11825 Hackers' Crackdown
+          <h1 class="post-title" itemprop="name headline">浅谈python函数中一些变量的问题
               
             
           </h1>
@@ -371,24 +371,12 @@
                 
               
 
-              <time title="创建时间：2018-10-21 15:36:45" itemprop="dateCreated datePublished" datetime="2018-10-21T15:36:45+08:00">2018-10-21</time>
+              <time title="创建时间：2020-11-11 18:56:39 / 修改时间：21:10:59" itemprop="dateCreated datePublished" datetime="2020-11-11T18:56:39+08:00">2020-11-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-10-24 12:29:30" itemprop="dateModified" datetime="2018-10-24T12:29:30+08:00">2018-10-24</time>
               
             
           </span>
@@ -405,7 +393,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ysjily.github.io/categories/状态压缩/" itemprop="url" rel="index"><span itemprop="name">状态压缩</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ysjily.github.io/categories/python初步/" itemprop="url" rel="index"><span itemprop="name">python初步</span></a></span>
 
                 
                 
@@ -420,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/ysjily.github.io/2018/10/21/hacker/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/ysjily.github.io/2018/10/21/hacker/" itemprop="commentCount"></span>
+                <a href="/ysjily.github.io/2020/11/11/py2/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/ysjily.github.io/2020/11/11/py2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -429,7 +417,7 @@
 
           
           
-             <span id="/ysjily.github.io/2018/10/21/hacker/" class="leancloud_visitors" data-flag-title="UVA11825 Hackers' Crackdown">
+             <span id="/ysjily.github.io/2020/11/11/py2/" class="leancloud_visitors" data-flag-title="浅谈python函数中一些变量的问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -460,12 +448,22 @@
       
 
       
-        <h2 id="UVA11825-Hackers’-Crackdown"><a href="#UVA11825-Hackers’-Crackdown" class="headerlink" title="UVA11825 Hackers’ Crackdown"></a>UVA11825 Hackers’ Crackdown</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>假如你是一个黑客，侵入了一个有着n台计算机（编号为1.2.3….n）的网络。一共有n种服务，每台计算机都运行着所有服务。对于每台计算机，你都可以选择一项服务，终止这台计算机和所有与它相邻计算机的该项服务（如果其中一些服务已经停止，那他们继续保持停止状态）。你的目标是让尽量多的服务完全瘫痪(即：没有任何计算及运行着该服务) 输入格式</p>
-<p>输入包含多组数据，每组数据的第一行为整数n(1&lt;=n&lt;=16):以下n行每行描述一台计算机相邻的计算机，其中第一个数m为相邻计算机个数，接下来的m个整数为这些计算机的编号。输入结束标志n=0. 输出格式</p>
-<p>对于每组数据，输出完全瘫痪的服务的数量</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>题意：每个电脑都能影响一部分电脑服务，要求尽量多的服务被完全关闭</p>
-<p>我们想到一个电脑能影响一部分电脑，那我们就能找出一个集合，操作这个集合就能影响所有电脑，然后对所有集合做一个背包即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,close,a;</span><br><span class="line">int comp[1&lt;&lt;17],spread[1&lt;&lt;17],dp[1&lt;&lt;17];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int cnt=0;</span><br><span class="line">    while(1)</span><br><span class="line">    &#123;</span><br><span class="line">        memset(comp,0,sizeof(comp));</span><br><span class="line">        memset(spread,0,sizeof(spread));</span><br><span class="line">        memset(dp,0,sizeof(dp));</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    if(n==0)</span><br><span class="line">    break;</span><br><span class="line">    for(int i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;close);</span><br><span class="line">        comp[i]=(1&lt;&lt;i);</span><br><span class="line">        for(int j=0;j&lt;close;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(&quot;%d&quot;,&amp;a);</span><br><span class="line">            comp[i]|=(1&lt;&lt;a);//每个点影响的范围</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=0;i&lt;(1&lt;&lt;n);i++)</span><br><span class="line">     for(int j=0;j&lt;n;j++)</span><br><span class="line">     &#123;</span><br><span class="line">     	if(i&amp;(1&lt;&lt;j))</span><br><span class="line">     	spread[i]|=comp[j];//i这个集合能影响的范围</span><br><span class="line">     &#125;</span><br><span class="line">    for(int i=0;i&lt;(1&lt;&lt;n);i++)</span><br><span class="line">     for(int s=i;s;s=(s-1)&amp;i)</span><br><span class="line">     &#123;</span><br><span class="line">     	if(spread[s]==(1&lt;&lt;n)-1)</span><br><span class="line">     	dp[i]=max(dp[i],dp[i^s]+1);//背包</span><br><span class="line">     &#125;</span><br><span class="line">    printf(&quot;Case %d: %d\n&quot;,++cnt,dp[(1&lt;&lt;n)-1]);</span><br><span class="line">    &#125; </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="局部变量与全局变量的关系"><a href="#局部变量与全局变量的关系" class="headerlink" title="局部变量与全局变量的关系"></a>局部变量与全局变量的关系</h2><p>与c++不同，python中局部与全局的关系很有意思。c++的一部分bug就来自于局部与全局的冲突，当然，好处是可以方便地修改全局变量。而py的主函数和次函数是在不同栈运行的，变量相对独立。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fuck</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">7</span>;b = <span class="number">8</span></span><br><span class="line">    print(a, b)</span><br><span class="line">a = <span class="number">1</span>;b = <span class="number">2</span></span><br><span class="line">fuck()</span><br><span class="line">print(a, b)</span><br><span class="line">&gt;&gt;&gt;<span class="number">7</span> <span class="number">8</span></span><br><span class="line">&gt;&gt;&gt;<span class="number">1</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>主次函数都定义了a, b，但对其进行操作并不相互影响</p>
+<h2 id="局部与全局之间的桥梁——形参"><a href="#局部与全局之间的桥梁——形参" class="headerlink" title="局部与全局之间的桥梁——形参"></a>局部与全局之间的桥梁——形参</h2><h3 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h3><p>拷贝一个相关变量的指针，指向传入前的一个位置（可以是一个数，字符，数据结构等），对指针修改不影响原数据，但对指针所指向的地址修改则会修改其数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fuck</span><span class="params">(lis)</span>:</span></span><br><span class="line">    lis = <span class="keyword">None</span></span><br><span class="line">lis = list()</span><br><span class="line">lis.append(<span class="number">2</span>)</span><br><span class="line">fuck(lis)</span><br><span class="line">print(lis)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<p>将列表指针指向None，不影响</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fuck</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    a, b = b, a</span><br><span class="line">    print(a, b)</span><br><span class="line">a = <span class="number">6</span>; b = <span class="number">9</span></span><br><span class="line">fuck(a, b)</span><br><span class="line">print(a, b)</span><br><span class="line">&gt;&gt;&gt;<span class="number">9</span> <span class="number">6</span></span><br><span class="line">&gt;&gt;&gt;<span class="number">6</span> <span class="number">9</span></span><br></pre></td></tr></table></figure>
+<p>修改变量指向数值，不影响</p>
+<p>然而，以下修改会对原数值产生影响</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fuck</span><span class="params">(lis)</span>:</span></span><br><span class="line">    lis.append(<span class="number">1</span>)</span><br><span class="line">lis = list()</span><br><span class="line">lis.append(<span class="number">2</span>)</span><br><span class="line">fuck(lis)</span><br><span class="line">print(lis)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">2</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>通过指针对其列表中的数据进行修改，全局变量发生改变。</p>
+<h3 id="默认值参数"><a href="#默认值参数" class="headerlink" title="默认值参数"></a>默认值参数</h3><p>顾名思义，不传此参就取默认值，节省码量十分有限，考试或装逼用。没什么说的，过</p>
+<h3 id="可变长度参数"><a href="#可变长度参数" class="headerlink" title="可变长度参数"></a>可变长度参数</h3><p>一个*，传一堆进去打包成元组</p>
+<p>两个*，传一堆进去打包成字典</p>
+<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>有可能参数太多我们忘了顺序，那样我们可以直接变量名赋值传参。</p>
+
       
     </div>
 
@@ -492,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ysjily.github.io/2018/10/21/zxs/" rel="next" title="主席树">
-                <i class="fa fa-chevron-left"></i> 主席树
+              <a href="/ysjily.github.io/2020/11/08/py1/" rel="next" title="python常用内置函数">
+                <i class="fa fa-chevron-left"></i> python常用内置函数
               </a>
             
           </div>
@@ -501,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/ysjily.github.io/2018/10/21/lyfzs/" rel="prev" title="二分图相关总结">
-                二分图相关总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -721,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UVA11825-Hackers’-Crackdown"><span class="nav-number">1.</span> <span class="nav-text">UVA11825 Hackers’ Crackdown</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.2.</span> <span class="nav-text">题解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量与全局变量的关系"><span class="nav-number">1.</span> <span class="nav-text">局部变量与全局变量的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部与全局之间的桥梁——形参"><span class="nav-number">2.</span> <span class="nav-text">局部与全局之间的桥梁——形参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位置参数"><span class="nav-number">2.1.</span> <span class="nav-text">位置参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认值参数"><span class="nav-number">2.2.</span> <span class="nav-text">默认值参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变长度参数"><span class="nav-number">2.3.</span> <span class="nav-text">可变长度参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字参数"><span class="nav-number">2.4.</span> <span class="nav-text">关键字参数</span></a></li></ol></li></ol></div>
             
 
           </div>
