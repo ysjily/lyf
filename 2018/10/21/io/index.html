@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/ysjily.github.io/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/ysjily.github.io/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/ysjily.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/ysjily.github.io/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/ysjily.github.io/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/ysjily.github.io/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/ysjily.github.io/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/ysjily.github.io/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/ysjily.github.io/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="遵循狒狒匪匪的要求，写下这篇noip倒计时日志 10.15OL竟然没有考试（说好的加大马力呢….），看了一上午加一下午的noip模拟题（沉迷于杭州学军的模拟题无法自拔）。 对一道多重背包上下其手搞了一道自以为很毒瘤的题粗来，结果先是数据出锅，然后被芝麻糊糊爆搜搜过去了…..懒得加强数据，就更加毒瘤地把时限开成了100ms（雾），成功把芝麻糊糊的爆搜卡成了0分。（手动滑稽） 晚上十分挫地被一道noi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Noip倒计时">
+<meta property="og:url" content="https://github.com/ysjily/2018/10/21/io/index.html">
+<meta property="og:site_name" content="洛阳枫">
+<meta property="og:description" content="遵循狒狒匪匪的要求，写下这篇noip倒计时日志 10.15OL竟然没有考试（说好的加大马力呢….），看了一上午加一下午的noip模拟题（沉迷于杭州学军的模拟题无法自拔）。 对一道多重背包上下其手搞了一道自以为很毒瘤的题粗来，结果先是数据出锅，然后被芝麻糊糊爆搜搜过去了…..懒得加强数据，就更加毒瘤地把时限开成了100ms（雾），成功把芝麻糊糊的爆搜卡成了0分。（手动滑稽） 晚上十分挫地被一道noi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-01T23:44:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Noip倒计时">
+<meta name="twitter:description" content="遵循狒狒匪匪的要求，写下这篇noip倒计时日志 10.15OL竟然没有考试（说好的加大马力呢….），看了一上午加一下午的noip模拟题（沉迷于杭州学军的模拟题无法自拔）。 对一道多重背包上下其手搞了一道自以为很毒瘤的题粗来，结果先是数据出锅，然后被芝麻糊糊爆搜搜过去了…..懒得加强数据，就更加毒瘤地把时限开成了100ms（雾），成功把芝麻糊糊的爆搜卡成了0分。（手动滑稽） 晚上十分挫地被一道noi">
+
+
+
+
+
+
+  <link rel="canonical" href="https://github.com/ysjily/2018/10/21/io/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Noip倒计时 | 洛阳枫</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/ysjily" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/ysjily.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洛阳枫</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">我知道你知道我在这里</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/ysjily.github.io/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/ysjily.github.io/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/ysjily.github.io/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/ysjily.github.io/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/ysjily.github.io/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ysjily/ysjily.github.io/2018/10/21/io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lyf">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/ysjily.github.io/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛阳枫">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Noip倒计时
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-21 08:02:02" itemprop="dateCreated datePublished" datetime="2018-10-21T08:02:02+08:00">2018-10-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-02 07:44:38" itemprop="dateModified" datetime="2018-11-02T07:44:38+08:00">2018-11-02</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/ysjily.github.io/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ysjily.github.io/2018/10/21/io/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/ysjily.github.io/2018/10/21/io/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/ysjily.github.io/2018/10/21/io/" class="leancloud_visitors" data-flag-title="Noip倒计时">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>遵循<del>狒狒</del>匪匪的要求，写下这篇noip倒计时日志</p>
+<h3 id="10-15"><a href="#10-15" class="headerlink" title="10.15"></a>10.15</h3><p>OL竟然没有考试（说好的加大马力呢….），看了一上午加一下午的noip模拟题（沉迷于杭州学军的模拟题无法自拔）。</p>
+<p>对一道多重背包上下其手搞了一道自以为很毒瘤的题粗来，结果先是数据出锅，然后被芝麻糊糊爆搜搜过去了…..懒得加强数据，就更加毒瘤地把时限开成了100ms（雾），成功把芝麻糊糊的爆搜卡成了0分。（手动滑稽）</p>
+<p>晚上十分挫地被一道noip模拟题的t1卡了很久，当快要放弃人生时发现答案很小？可以暴力枚举？然后二进制优化检验就行了？….窝还是太菜了啊啊啊。</p>
+<p>自以为字符串dp很差就去看了几道题，然后发现果然做不粗来….疯狂颓废颓废….然后发现暴力匹配暴力刷表可过？</p>
+<p>晚上在朋友博客上注册了一个账号，把tarjan搬上去镇楼，从洛谷图床搬图真是累死…..以后题解再也不用洛谷图床了…..</p>
+<h3 id="10-16"><a href="#10-16" class="headerlink" title="10.16"></a>10.16</h3><p>OL考试了！</p>
+<p>群里面czt才冷静分析一波，觉得还没有过危险期，记过OL就清了清嗓子：“好嘛，把座位调一蛤哈。”</p>
+<p>十分虚地换了位置，又十分虚地拷了题，又十分虚地调配置（结果什么都没有调好），OL就断网了。</p>
+<p>OL关上门，“密码是6个3蛤。”</p>
+<p>2333333</p>
+<p>开了题，看T1，滑稽？什么鬼？等等…这题我好像在哪见过。</p>
+<p>然后意识到是暑假上来前一队的考试题，我去找hdxrie要了题，看了看，感觉有点难就跑了。</p>
+<p>所以好像并没有什么影响？</p>
+<p>做题吧。</p>
+<p>T1如果把四人组两两合并起来拿个东西来装一下数量就可以了？那就用hash表吧。链表？四个操作不好写，还是用vector吧（爆炸伏笔）。刷刷刷，中途取膜炸掉了，换成233333，一发写过，自信不拍。</p>
+<p>T2是个dp？嗯。好像很水，直接用个结构体记录这个时间点最大AC数和满足最大AC数的剩下的代码行数就行了，30min写过，自信不拍。</p>
+<p>T3是个爆搜？完了完了，不想写，我今天应该有200了吧，<del>不为100分向爆搜折腰</del>，我今天就是死，死外边，从这里跳下去也不写爆搜题！水了五分钟，哎哟，这题贼难。</p>
+<p>写写写，感觉要码到世界尽头，搞了1个多小时才过了样例，嗯，25分应该有了吧。</p>
+<p>预估100+100+？</p>
+<p>然后就水水水…..</p>
+<p>评测先测T2，嗯，A了，很稳。到了T1，What?超时了？逗我？又到了T3，错完了。GG。</p>
+<p>结果突然想起OL的老爷机卡各种STL容器。</p>
+<p>多么痛的领悟….</p>
+<p>下午改题，10分钟改完T1，随便改了改T3，水了75分心满意足不想搞了。就去看了看hdxrie给我的noip模拟，T1这是啥啊？推式子？推推推，推了30min，退不粗来了，还是太菜了啊。</p>
+<p>想了一个小时磨不出来，看了下std，一眼秒懂——这不是矩阵快速幂优化递推吗？话说好久没做这种题了，得练练啊。</p>
+<p>晚上练字符串dp和矩阵，搞了半天，发现找不到什么好题…..跑去找imagine，imagine推荐了租酥雨….那就上吧！</p>
+<h3 id="10-17"><a href="#10-17" class="headerlink" title="10.17"></a>10.17</h3><p>没有考试</p>
+<p>怒刷3道租酥雨博客</p>
+<p>更加感受到自己还需要提升的地方</p>
+<p>晚上搞图论，被洛谷标签蛊惑，被星际贸易卡了半个晚上，才发现是个单调队列优化dp。</p>
+<h3 id="10-18"><a href="#10-18" class="headerlink" title="10.18"></a>10.18</h3><p>OL今天考noip真题？</p>
+<p>曾经以为noip2016是最难的一年，今天一考，100+55+96 = 251？</p>
+<p>感觉自己要不是t3偷懒把答案扔到转移里一起更新没有考虑n=1的情况第一天就能一等（逃）</p>
+<p>果然做过的题就是不一样。</p>
+<p>最难的永远是今年</p>
+<p>被aoweiyin推荐的毒瘤找规律卡到了晚上8点过，其余时间全在改天天爱跑步，<del>还是没有改出来</del>，有点小难受。</p>
+<h3 id="10-23"><a href="#10-23" class="headerlink" title="10.23"></a>10.23</h3><p>因为某种原因咕咕了几天（<del>其实是因为懒</del>）</p>
+<p>今天考的是noip2017（搞不懂为什么要一直靠=考原题）</p>
+<p>想起去年noipDAY1差点爆零这一悲惨经历，决定要一雪前耻！（flag）</p>
+<p>考题在解压前我就把T1写好了……..</p>
+<p>该死的结论题去年卡了我好久都没有看出来</p>
+<p>T2才是一年的梦魇，去年字符读入一直有问题，搞得我头皮发麻，于是之前刷noip时一直选择跳过，今天还是逃不过了。</p>
+<p>那就写吧……等等，我好像会写了…….嗯，应该没问题，就是这样。</p>
+<p>T3去年打了个最短路计数没有清空图一分没得……今年反手一个记搜，自信不拍。</p>
+<p>我应该Ak了吧23333…..</p>
+<p>考完后提前把代码交到洛谷上，发现T2CE了！</p>
+<p>然后我发现了我的time变量…..</p>
+<p>GG了</p>
+<p>DAY1200滚粗了</p>
+<p>下午把三道题的题解写了，无所事事地闲逛，刷题，感jio状态很差。调整了好一会儿才反应过来我四不四没救了啊……</p>
+<p>晚上有个天真的小学弟来问题，十分认真地说出了“数据结构不是很简单吗？”一起了众人的愤懑。imagin拿出了10kb的计算几何，大帅王者拿出了红黑树…..一群人去嘲讽人家，直播聊天。吓得他直接溜到akb那里嘤嘤嘤了QAQ</p>
+<h3 id="10-24"><a href="#10-24" class="headerlink" title="10.24"></a>10.24</h3><p>又是没有考试的颓废的一天。</p>
+<p>上午把租酥雨刷题计划上能做题都搞了，才发现自己能做的好像还真没几道QAQ，然后继续跟踪yyb，顺便%%GXZ</p>
+<p>下午听OL讲noip2015年DAY2。翻了翻洛谷，这三道我都做过了耶，那就更博客吧。更了几篇，发现OL在讲T3于是饶有兴致地听了听。</p>
+<p>OL：“我想了一蛤，我jio得这个题考得就是你对dfs的理解蛤”</p>
+<p>然后他就讲了好久如何O(n)的一次搜索得到LCA，听他balabala了好久的tarjan，晕头转向。半个多小时后，终于讲完tarjan了，我抬起了头，盯着OL，想听他如何用dfs解决这道我用了二分+差分+倍增求LCA的神题。</p>
+<p>OL望了望四周：“听懂了没有？”（懂了懂了，你快讲）</p>
+<p>“那就回去在mei一蛤嘛”</p>
+<p>？</p>
+<p>啥，就完了？一道二分+差分+倍增求LCA的神题你就讲一下如何O(n)就LCA？………</p>
+<p>有点懵圈。</p>
+<p>晚上刷差分，被一道神题恶心了好久，被Bug哥说可以用二阶差分秒杀。</p>
+<p>二阶差分是啥?喵喵喵？</p>
+<p>看了一会儿二阶差分，写了到模板题2，在来看那道神题…….怎么二阶差分啊，搞不了啊……我还是太菜了……</p>
+<p>结果Bug哥放学的时候给我说二阶差分做不了。</p>
+<p>233333</p>
+<h3 id="10-25"><a href="#10-25" class="headerlink" title="10.25"></a>10.25</h3><p>OL竟然没有考试？</p>
+<p>那就刷题吧，黄学长六百多道BZOJ的题可以试试能搞多少</p>
+<p>然后….上午下午晚上都在刷黄学长去了</p>
+<p>下午体检，结果两个负责人都没有去拿体检单在那里面面相觑。搞了半天就在体检处。去测身高体重发现只长高了1cm，体重还没变？鬼知道这一年我在南山干了什么……</p>
+<p>晚上完成了博客的最后一步，现在终于可以宣告完成啦。</p>
+<h3 id="10-26"><a href="#10-26" class="headerlink" title="10.26"></a>10.26</h3><p>OL还不考试…..</p>
+<p>早上被黄学长的一道题卡到了10点，芝麻糊糊又过来问了一道noip模拟，叫什么多愁伤感的xxx？先自己想想吧，想想想，嗯，把区间膜一下排除掉就可以了？懒得打，就去看标程，好像没什么毛病，等等，今天上午就过了？</p>
+<p>下午给芝麻糊糊讲了一下，被她问得一愣一愣的，窝还是太菜了2333。<br>继续刚黄学长的题，开三道就是两道网络流，剩下一道毒瘤数学题，无从下手…..写了2个题，就把一个下午给颓掉了。</p>
+<p>晚上有牛客网比赛？去打一下（其实是想混个T恤）。</p>
+<p>膜法师？有意思</p>
+<p>第一题水题直接n根号n秒切</p>
+<p>第二题就卡住了，仙人掌？然鹅只知道定义，并不知道任何性质。乱搞一下，n=1时直接1，其余二分图匹配，成功就是2，失败就是3，应该不会有4色吧……然后就A掉了</p>
+<p>第三题…..树形dp？看起来很麻的样子，刚一下…..刚到了最后都没有调出来，最后才发现有个细节搞错了，两百多名滚粗。</p>
+<p>以后写题时思路一定要清晰了才动手</p>
+<h3 id="10-27"><a href="#10-27" class="headerlink" title="10.27"></a>10.27</h3><p>OL竟然又要考试了？</p>
+<p>还以为是2017day2，结果一打开题，面如死灰，by kiana。</p>
+<p>第一题是个什么鬼东西，一大坨矩阵求并？记个最大次大？来一发试试。调调调，搞到了10点才过了大样例。</p>
+<p>还有一半的时间，果断写暴力，10点40时搞完暴力，无所事事，看了看T3的前5个点好像数位dp很可做的样子，然后就一直写写写，结果因为某种莫名其妙的原因gg掉了。</p>
+<p>我第一题应该没问题吧……</p>
+<p>中午来看成绩，82？T1炸了？czt给我说用前缀后缀并起来搞一下就行了……结果凤姐用扫描线A掉了。</p>
+<p>T3不应该只有12的呀….结果回来一看，才发现没有取膜……</p>
+<p>取膜取膜取膜！</p>
+<h3 id="10-28"><a href="#10-28" class="headerlink" title="10.28"></a>10.28</h3><p>上午早早到机房<del>c</del>，周卓的比赛切了T1就不想搞了，T2感觉很奇葩，T3叫忘情？忘情水二分？题目提示算法？有意思。听说后面的题还有毒瘤，就不打算做了，颓废颓废。</p>
+<p>下午收钱收死个人，毒瘤28块，找零真是要命。</p>
+<p>晚上打牛客网，T1大爆搜记录答案懒得离散化直接二分查找区间，然后T2看错题没看到是个环以为是情侣给我烧了的变种，就死掉了，最后极限一个暴力骗了20。</p>
+<p>20名和26名的T恤，我23……</p>
+<h3 id="10-31"><a href="#10-31" class="headerlink" title="10.31"></a>10.31</h3><p>再次由于某种原因咕咕了几天。（主要是考太差了不敢写）</p>
+<p>早上填了一下素数筛法的坑，想起周末跟朋友讨论的那个题把它写了出来，下午刷状压，被一双木棋的轮廓线卡了好久才调出来。</p>
+<p>晚上有人来跟我说我的题有原题？</p>
+<p>不会吧…..</p>
+<p>嗯？老唐又骗我？我想了想，周末我们讨论了一会十分复杂地各种技能各种伤害的补兵，结果发现有点困难，他突然神秘兮兮地给我说：“那看看这样子，就是把伤害都看成1的话，就可做了。”于是我一直想到了周二还是没有想出来，只好找他要题解，然后出成了题…….结果撞车了2333333，身败名裂。</p>
+<p>回去得把他红烧一顿了。</p>
+<p>晚上因为撞题心里一直很慌，只切了一道傻逼状压，以后还是少bb几句吧…..</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ysjily.github.io/2018/10/20/road/" rel="next" title="道路">
+                <i class="fa fa-chevron-left"></i> 道路
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ysjily.github.io/2018/10/21/trea/" rel="prev" title="宝箱">
+                宝箱 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/ysjily.github.io/images/head.jpg"
+                alt="lyf" />
+            
+              <p class="site-author-name" itemprop="name">lyf</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/ysjily.github.io/archives/">
+                
+                    <span class="site-state-item-count">47</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/ysjily.github.io/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/ysjily.github.io/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.luogu.org/blog/Imagine/" title="Orzimagine大佬" target="_blank">Orzimagine大佬</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/ImagineC/" title="Orzimagine大佬博客园" target="_blank">Orzimagine大佬博客园</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/miecoku/" title="Orz小聪聪" target="_blank">Orz小聪聪</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/victoryczt" title="OrzTimeTraveller大佬" target="_blank">OrzTimeTraveller大佬</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ffdy.github.io/" title="Orz疯疯芸大佬" target="_blank">Orz疯疯芸大佬</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/Princeoftheking/" title="Orz大帅王者" target="_blank">Orz大帅王者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-15"><span class="nav-number">1.</span> <span class="nav-text">10.15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-16"><span class="nav-number">2.</span> <span class="nav-text">10.16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-17"><span class="nav-number">3.</span> <span class="nav-text">10.17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-18"><span class="nav-number">4.</span> <span class="nav-text">10.18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-23"><span class="nav-number">5.</span> <span class="nav-text">10.23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-24"><span class="nav-number">6.</span> <span class="nav-text">10.24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-25"><span class="nav-number">7.</span> <span class="nav-text">10.25</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-26"><span class="nav-number">8.</span> <span class="nav-text">10.26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-27"><span class="nav-number">9.</span> <span class="nav-text">10.27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-28"><span class="nav-number">10.</span> <span class="nav-text">10.28</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-31"><span class="nav-number">11.</span> <span class="nav-text">10.31</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lyf</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/ysjily.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/ysjily.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/ysjily.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/ysjily.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/ysjily.github.io/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/ysjily.github.io/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/ysjily.github.io/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/ysjily.github.io/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/ysjily.github.io/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'wlvs66T0X2P1YVi8sTXatkih-gzGzoHsz',
+        appKey: 'dtmVM55gKqhLQ8Ejnh3qI2c9',
+        placeholder: 'Just go go',
+        avatar:'https://s1.ax1x.com/2018/09/14/iE4ndH.jpg',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击 -->
+<script type="text/javascript" src="/lyf/js/src/mouse.js"></script>
